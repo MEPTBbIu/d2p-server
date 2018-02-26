@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47867a41-84a0-4f96-8b27-afc3bbe88a4f}</ProjectGuid>
+    <ProjectHome />
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>build\server.js</StartupFile>
+    <WorkingDirectory>E:\dev\d2p\server\build</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <EnableTypeScript>true</EnableTypeScript>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ToolsVersionPromptShown>0.0</ToolsVersionPromptShown>
+    <NodeExePath>D:\nodejs\node.exe</NodeExePath>
+    <NodeExeArguments>--inspect=9229</NodeExeArguments>
+    <StartWebBrowser>False</StartWebBrowser>
+    <DebuggerPort>9929</DebuggerPort>
+    <Environment>NODE_ENV=development</Environment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include=".stylelintrc" />
+    <Content Include="dota_english.txt" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="src\client.tsx" />
+    <Content Include="src\server.tsx" />
+    <Content Include="tsconfig.json" />
+    <Compile Include="postcss.config.js" />
+    <Content Include="build\manifest.json" />
+    <Compile Include="build\server.js" />
+    <Compile Include="config\main.ts" />
+    <Content Include="data\gsi-data.json" />
+    <Content Include="src\favicon.ico" />
+    <TypeScriptCompile Include="config\webpack\dev.ts" />
+    <TypeScriptCompile Include="config\webpack\index.ts" />
+    <TypeScriptCompile Include="src\globals.ts" />
+    <TypeScriptCompile Include="temp\abilities_name.ts" />
+    <TypeScriptCompile Include="temp\gsi-data.json.1.ts" />
+    <TypeScriptCompile Include="temp\gsi-data.json.ts" />
+    <TypeScriptCompile Include="temp\heroes_id.ts" />
+    <TypeScriptCompile Include="temp\heroes_name2.ts" />
+    <TypeScriptCompile Include="temp\index.ts" />
+    <TypeScriptCompile Include="temp\specials_name.ts" />
+    <TypeScriptCompile Include="temp\test.ts" />
+    <Compile Include="temp\index.js" />
+    <Compile Include="temp\test.js" />
+    <Content Include="build\public\favicon.ico" />
+    <Content Include="build\public\images\6bb4ab550c97742ecb88e2d2e6d5952b.png" />
+    <Compile Include="build\public\js\app.js" />
+    <TypeScriptCompile Include="config\types\dev.d.ts" />
+    <Compile Include="config\webpack\prod.js" />
+    <Compile Include="config\webpack\server.js" />
+    <Compile Include="config\webpack\test.js" />
+    <TypeScriptCompile Include="src\app\containers\index.ts" />
+    <TypeScriptCompile Include="src\app\redux\IStore.ts" />
+    <TypeScriptCompile Include="src\app\redux\reducers.ts" />
+    <TypeScriptCompile Include="src\app\redux\store.ts" />
+    <Content Include="src\app\components\Header\style.css" />
+    <Compile Include="src\app\components\Header\style.js" />
+    <Content Include="src\app\containers\About\style.css" />
+    <Content Include="src\app\containers\App\style.css" />
+    <Content Include="src\app\containers\Home\style.css" />
+    <Content Include="src\app\containers\Home\barbar.png" />
+    <Content Include="temp\kv\dota_english.txt" />
+    <Content Include="temp\kv\tsconfig.json" />
+    <TypeScriptCompile Include="temp\kv\data.ts" />
+    <TypeScriptCompile Include="temp\kv\index.ts" />
+    <TypeScriptCompile Include="temp\kv\test.ts" />
+    <TypeScriptCompile Include="temp\kv\tokenize.test.ts" />
+    <TypeScriptCompile Include="temp\kv\tokenize.ts" />
+    <Compile Include="temp\kv\data.js" />
+    <Compile Include="temp\kv\index.js" />
+    <Compile Include="temp\kv\test.js" />
+    <Compile Include="temp\kv\tokenize.js" />
+    <Content Include="temp\react-router\package.json" />
+    <Content Include="temp\react-router\README.md" />
+    <TypeScriptCompile Include="temp\react-router\index.d.ts" />
+    <Content Include="temp\static_data\npc_abilities.txt" />
+    <Content Include="temp\static_data\npc_heroes.txt" />
+    <Content Include="temp\static_data\npc_units.txt" />
+    <TypeScriptCompile Include="temp\react-router\lib\applyRouterMiddleware.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\browserHistory.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\createMemoryHistory.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\hashHistory.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\IndexLink.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\IndexRedirect.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\IndexRoute.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\Link.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\match.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\PatternUtils.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\PropTypes.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\Redirect.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\Route.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\Router.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\RouterContext.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\RouteUtils.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\useRouterHistory.d.ts" />
+    <TypeScriptCompile Include="temp\react-router\lib\withRouter.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="build" />
+    <Folder Include="build\public" />
+    <Folder Include="build\public\images" />
+    <Folder Include="build\public\js" />
+    <Folder Include="config" />
+    <Folder Include="config\types" />
+    <Folder Include="config\webpack" />
+    <Folder Include="data" />
+    <Folder Include="src" />
+    <Folder Include="src\app" />
+    <Folder Include="src\app\components" />
+    <Folder Include="src\app\components\Header" />
+    <Folder Include="src\app\containers" />
+    <Folder Include="src\app\containers\About" />
+    <Folder Include="src\app\containers\App" />
+    <Folder Include="src\app\containers\Home" />
+    <Folder Include="src\app\containers\Html" />
+    <Folder Include="src\app\redux" />
+    <Folder Include="src\app\routes" />
+    <Folder Include="temp" />
+    <Folder Include="temp\kv" />
+    <Folder Include="temp\react-router" />
+    <Folder Include="temp\react-router\lib" />
+    <Folder Include="temp\static_data" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,6 @@
+/node_modules
+/obj
+/build
+/dist
+/.vs
+/temp

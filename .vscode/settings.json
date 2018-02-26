@@ -1,0 +1,37 @@
+{
+	"npm-scripts.showStartNotification": false,
+	"git.ignoreLimitWarning": true,
+	"json.schemas": [
+		{
+			"fileMatch": [
+				"**.gis.json"
+			],
+			"url": "file:///E:/dev/d2p/server/temp/data/schema/gis-model.schema.json"
+		}
+	],
+	"cSpell.enabledLanguageIds": [
+		"c",
+		"cpp",
+		"csharp",
+		"css",
+		"go",
+		"handlebars",
+		"html",
+		"jade",
+		"javascript",
+		"javascriptreact",
+		"latex",
+		"less",
+		"markdown",
+		"php",
+		"plaintext",
+		"pub",
+		"python",
+		"restructuredtext",
+		"scss",
+		"text",
+		"typescript",
+		"typescriptreact",
+		"yml"
+	]
+}

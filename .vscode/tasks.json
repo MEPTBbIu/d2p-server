@@ -1,0 +1,52 @@
+{
+  "command": "npm",
+  "presentation": {
+    "echo": true,
+    "focus": false,
+    "panel": "shared",
+    "reveal": "always"
+  },
+  "tasks": [
+    {
+      "option": "watch",
+      "problemMatcher": [
+        "$tsc-watch"
+      ],
+      "tsconfig": "server\\tsconfig.json",
+      "type": "typescript"
+    },
+    {
+      "args": [
+        "start"
+      ],
+      "group": "build",
+      "label": "run"
+    },
+    {
+      "args": [
+        "build:prod"
+      ],
+      "label": "production"
+    },
+    {
+      "args": [
+        "install"
+      ],
+      "label": "install"
+    },
+    {
+      "args": [
+        "update"
+      ],
+      "label": "update"
+    },
+    {
+      "args": [
+        "run",
+        "test"
+      ],
+      "label": "test"
+    }
+  ],
+  "version": "2.0.0"
+}

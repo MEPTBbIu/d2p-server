@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json.schemastore.org/schema-catalog",
+  "version": 1,
+  "schemas": [
+    {
+      "url": "gsi-model.json",
+      "description": "Meta-validation schema for JSON Schema Draft 4",
+      "name": "GSI Model"
+    }
+  ]
+}

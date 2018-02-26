@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+	<Folder FolderName="XML Files" ExtStr="xml;cml;math;rdf;smil;svg;wml"/>
+	<Folder FolderName="XSL Files" ExtStr="xsl;xslt"/>
+	<Folder FolderName="XQuery Files" ExtStr="xq;xql;xquery"/>
+	<Folder FolderName="HTML Files" ExtStr="html;htm;xhtml;asp"/>
+	<Folder FolderName="DTD/Schemas" ExtStr="dtd;dcd;xdr;biz;xsd"/>
+	<Folder FolderName="Entities" ExtStr="ent">
+		<ExtMountFolder FolderName="E:\dev\d2p\server\temp"/>
+	</Folder>
+	<Folder FolderName="e:\dev\d2p\server\data" ExtStr="*.json">
+		<File FilePath="schema\catalog.json" HomeFolder="Yes"/>
+		<File FilePath="schema\gsi-model.json" HomeFolder="Yes"/>
+		<File FilePath="E:\dev\d2p\server\temp\data\schema\order.xsd" HomeFolder="Yes"/>
+		<File FilePath="test1.json" HomeFolder="Yes"/>
+		<File FilePath="schema\untitled.xsd" HomeFolder="Yes"/>
+		<File FilePath="http://json-schema.org/draft-04/schema" DocFrom="URL" HomeFolder="Yes"/>
+	</Folder>
+	<File FilePath="altova://folder_resource/d2p_server_data/schema\catalog.json" HomeFolder="Yes"/>
+</Project>

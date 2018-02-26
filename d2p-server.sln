@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "d2p-server", "d2p-server.njsproj", "{47867A41-84A0-4F96-8B27-AFC3BBE88A4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47867A41-84A0-4F96-8B27-AFC3BBE88A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47867A41-84A0-4F96-8B27-AFC3BBE88A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47867A41-84A0-4F96-8B27-AFC3BBE88A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47867A41-84A0-4F96-8B27-AFC3BBE88A4F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06EE447B-CE92-468A-88BC-52BAED89D4AC}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,5 @@
+import {connectHelperInit} from 'connect-redux-typescript'
+import {connect} from 'react-redux'
+import {IStore as State } from './IStore'
+
+export const connectHelper = connectHelperInit<State>(connect)

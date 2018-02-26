@@ -1,0 +1,15 @@
+{
+	"$schema": "./schema/gis-model.schema.json",
+	"provider": {
+		"name":""
+	},
+	"hero":{
+		"name":"n"
+	}
+	,
+	"abilities": {
+		"ability0": {
+			"name": "life_stealer_assimilate"
+		}
+	}
+}
