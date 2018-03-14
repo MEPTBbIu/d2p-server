@@ -1,4 +1,6 @@
 {
+	"$id":"GSI.Enums",
+	"$schema": "http://json-schema.org/draft-06/schema#",
 	"definitions": {
 		"npc_dota_hero": {
 			"$id": "/definitions/npc_dota_hero",
