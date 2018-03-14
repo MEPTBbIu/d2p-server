@@ -1,5 +1,10 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
+	"dependencies": {
+		"GSI_Enums.schema.json":{
+			"$schema": "https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI_Enums.schema.json"
+		}
+	},
 	"definitions": {
 		"GSI_AbilityBase": {
 			"$id": "/definitions/GSI_AbilityBase",
