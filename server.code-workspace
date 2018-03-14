@@ -19,15 +19,16 @@
 	"settings": {
 		"git.ignoreLimitWarning": true,
 		"typescript.tsdk": "d2p-server\\node_modules\\typescript\\lib",
-		"json.schemas": [
-			{
-				"*.mdb.json": "https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.GameState.schema.json"
-
-			}
-		],
 		"json.personalSchemas": [
-			{
-				"*.mdb.json":"https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.GameState.schema.json"
+			{"fileMatch":[
+				"/**/*.gsi.json"
+			],
+				"url":"https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI_Model.schema.json"
+			},
+			{"fileMatch":[
+				"/**/*.mdb.json"
+			],
+				"url":"https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.GameState.schema.json"
 			}
 		]
 	}
