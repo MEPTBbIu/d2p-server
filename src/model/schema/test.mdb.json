@@ -1,4 +1,10 @@
-[
+[{
+	"abilities":{
+		"ability0":{
+			"name":""
+		}
+	}
+},
 	{
 		"_id": "0001",
 		"provider": { "name": "Dota 2", "appid": 570, "version": 46, "timestamp": 1519662951 },

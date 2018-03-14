@@ -1,5 +1,5 @@
 {
-    "$id": "https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.MongoDB.Model.schema.json",
+    "$id": "GSI.MongoDB.Model",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "definitions": {
         "GSI_AbilityBase": {
@@ -193,7 +193,7 @@
                     "type": "boolean"
                 },
                 "name": {
-                    "$ref": "GSI_Enums.schema.json#/definitions/npc_dota_hero"
+                    "$ref": "GSI.Enums#/definitions/npc_dota_hero"
                 },
                 "respawn_seconds": {
                     "type": "number"
@@ -211,7 +211,7 @@
                     "type": "integer"
                 }
             },
-            "required": [],
+         
             "type": "object"
         },
         "GSI_HeroAbilities": {
@@ -658,8 +658,8 @@
         }
     },
     "dependencies": {
-        "GSI_Enums.schema.json": {
-            "$schema": "https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI_Enums.schema.json"
+        "GSI.Enums": {
+            "$ref": "https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.Enums.schema.json"
         }
     },
     "description": "array of Messages",

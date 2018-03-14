@@ -1,35 +1,37 @@
 {
-	"folders": [
-		{
-			"path": "E:\\dev\\dota2-gsi-sockets"
-		},
-		{
-			"path": "."
-		},
-		{
-			"path": "E:\\dev\\dota2-minimap-hero-sprites"
-		},
-		{
-			"path": "E:\\dev\\types-dota-vscripts"
-		},
-		{
-			"path": "E:\\dev\\Dota-Reborn-Package"
-		}
-	],
-	"settings": {
-		"git.ignoreLimitWarning": true,
-		"typescript.tsdk": "d2p-server\\node_modules\\typescript\\lib",
-		"json.personalSchemas": [
-			{"fileMatch":[
-				"/**/*.gsi.json"
-			],
-				"url":"https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI_Model.schema.json"
-			},
-			{"fileMatch":[
-				"/**/*.mdb.json"
-			],
-				"url":"https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.GameState.schema.json"
-			}
-		]
-	}
+    "folders": [
+        {
+            "path": "E:\\dev\\dota2-gsi-sockets"
+        },
+        {
+            "path": "."
+        },
+        {
+            "path": "E:\\dev\\dota2-minimap-hero-sprites"
+        },
+        {
+            "path": "E:\\dev\\types-dota-vscripts"
+        },
+        {
+            "path": "E:\\dev\\Dota-Reborn-Package"
+        }
+    ],
+    "settings": {
+        "git.ignoreLimitWarning": true,
+        "json.personalSchemas": [
+            {
+                "fileMatch": [
+                    "/**/*.gsi.json"
+                ],
+                "url": "https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI_Model.schema.json"
+            },
+            {
+                "fileMatch": [
+                    "/**/*.mdb.json"
+                ],
+                "url": "https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.GameState.schema.json"
+            }
+        ],
+        "typescript.tsdk": "d2p-server\\node_modules\\typescript\\lib"
+    }
 }
