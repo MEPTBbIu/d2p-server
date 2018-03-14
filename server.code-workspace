@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "E:\\dev\\dota2-gsi-sockets"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "E:\\dev\\dota2-minimap-hero-sprites"
+		},
+		{
+			"path": "E:\\dev\\types-dota-vscripts"
+		},
+		{
+			"path": "E:\\dev\\Dota-Reborn-Package"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true,
+		"typescript.tsdk": "d2p-server\\node_modules\\typescript\\lib",
+		"json.schemas": [
+			{
+				"*.mdb.json": "E:\\dev\\d2p-server\\src\\model\\schema\\GSI.GameState.schema.json"
+			}
+		]
+	}
+}

@@ -1,5 +1,5 @@
 import * as types from './types';
-import * as ts from 'typescript';
+import * as ts from "typescript";
 
 export interface ParsedData<T> {
     /** only if valid */
@@ -71,10 +71,10 @@ export function parse<T>(str: string): ParsedData<T> {
 }
 
 export function stringify(object: Object, eol: string = '\n'): string {
-    var cache = [];
+    var cache:any = [];
     var value = JSON.stringify(object,
         // fixup circular reference
-        function(key, value) {
+        function(_key, value) {
             if (typeof value === 'object' && value !== null) {
                 if (cache.indexOf(value) !== -1) {
                     // Circular reference found, discard key
@@ -88,20 +88,8 @@ export function stringify(object: Object, eol: string = '\n'): string {
         // indent 2 spaces
         2);
     value = value.split('\n').join(eol) + eol;
-    cache = null;
+    cache=null;
     return value;
-}
-
-export function parseErrorToCodeError(filePath: string, error: ParseError, source: types.CodeErrorSource): types.CodeError {
-    return {
-        source,
-        filePath,
-        from: error.from,
-        to: error.to,
-        message: error.message,
-        preview: error.preview,
-        level: 'error'
-    }
 }
 
 function stripBOM(str: string) {
@@ -148,9 +136,9 @@ var json_parse: any = (function() {
     // We are defining the function inside of another function to avoid creating
     // global variables.
 
-    var at,     // The index of the current character
-        ch,     // The current character
-        escapee = {
+    var at:number,     // The index of the current character
+        ch:string,     // The current character
+        escapee:{[ch:string]:any} = {
             '"': '"',
             '\\': '\\',
             '/': '/',
@@ -160,9 +148,9 @@ var json_parse: any = (function() {
             r: '\r',
             t: '\t'
         },
-        text,
+        text:string,
 
-        error = function(m) {
+        error = (m:string) => {
 
             // Call error when something is wrong.
 
@@ -174,7 +162,7 @@ var json_parse: any = (function() {
             };
         },
 
-        next = function(c?) {
+        next = (c?:string) => {
 
             // If a c parameter is provided, verify that it matches the current character.
 
@@ -189,8 +177,9 @@ var json_parse: any = (function() {
             at += 1;
             return ch;
         },
-
-        number = function() {
+        _minus = `-`,
+        _plus = `+`,
+        number = () => {
 
             // Parse a number value.
 
@@ -211,10 +200,10 @@ var json_parse: any = (function() {
                     string += ch;
                 }
             }
-            if (ch === 'e' || ch === 'E') {
+            if (ch === `E` || ch === `e` ) {
                 string += ch;
                 next();
-                if (ch === '-' || ch === '+') {
+                if (ch ===  _minus || ch === _plus) {
                     string += ch;
                     next();
                 }
@@ -231,7 +220,7 @@ var json_parse: any = (function() {
             }
         },
 
-        string = function() {
+        string = ()=> {
 
             // Parse a string value.
 
@@ -282,7 +271,7 @@ var json_parse: any = (function() {
             }
         },
 
-        word = function() {
+        word = ()=> {
 
             // true, false, or null.
 
@@ -310,25 +299,27 @@ var json_parse: any = (function() {
             error("Unexpected '" + ch + "'");
         },
 
-        value,  // Place holder for the value function.
+        value:any,  // Place holder for the value function.
 
-        array = function() {
+        array = () => {
 
             // Parse an array value.
 
-            var array = [];
+            var array:any = [],
+            _rb = `]`,
+            _lb = `[`;
 
-            if (ch === '[') {
+            if (ch === `[`) {
                 next('[');
                 white();
-                if (ch === ']') {
+                if (ch === _rb) {
                     next(']');
                     return array;   // empty array
                 }
                 while (ch) {
                     array.push(value());
                     white();
-                    if (ch === ']') {
+                    if (ch === _lb) {
                         next(']');
                         return array;
                     }
@@ -343,18 +334,21 @@ var json_parse: any = (function() {
 
             // Parse an object value.
 
-            var key,
-                object = {};
+            var key:any,
+                object:{[key:string]:any} = {},
+                _rb = `}`,
+                _lb = `{`;
+
 
             if (ch === '{') {
                 next('{');
                 white();
-                if (ch === '}') {
+                if (ch === _rb) {
                     next('}');
                     return object;   // empty object
                 }
                 while (ch) {
-                    key = string();
+                    key =  string();
                     white();
                     next(':');
                     if (Object.hasOwnProperty.call(object, key)) {
@@ -362,7 +356,7 @@ var json_parse: any = (function() {
                     }
                     object[key] = value();
                     white();
-                    if (ch === '}') {
+                    if (ch === _lb) {
                         next('}');
                         return object;
                     }
@@ -398,7 +392,7 @@ var json_parse: any = (function() {
     // Return the json_parse function. It will have access to all of the above
     // functions and variables.
 
-    return function(source, reviver?) {
+    return (source:string, reviver?:(holder:{[key:string]:any}, key:string, value: any)=>any) => {
         var result;
 
         text = source;
@@ -417,7 +411,7 @@ var json_parse: any = (function() {
         // result.
 
         return typeof reviver === 'function'
-            ? (function walk(holder, key) {
+            ? (function walk(holder:{[key:string]:any}, key:string) {
                 var k, v, value = holder[key];
                 if (value && typeof value === 'object') {
                     for (k in value) {

@@ -1,0 +1,157 @@
+Arguments: 
+  D:\nodejs\node.exe E:\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/socket.io
+
+PATH: 
+  D:\Python27\;D:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;D:\VSCode\bin;D:\Android\apache-maven-3.5.2\bin;C:\Program Files\Docker\Docker\Resources\bin;C:\PROGRAM FILES\DOCKER\DOCKER\RESOURCES\BIN;C:\PROGRAM FILES (X86)\CHROMIUM\APPLICATION;C:\PROGRAM FILES (X86)\GOOGLE\CHROME\APPLICATION;C:\RUBY24-X64\BIN;C:\PROGRAM FILES (X86)\GOOGLE\CHROME\APPLICATION;C:\PROGRAM FILES (X86)\INTEL\ICLS CLIENT\;C:\PROGRAM FILES\INTEL\ICLS CLIENT\;C:\PROGRAMDATA\SCOOP\SHIMS;E:\USERS\XOPB\APPDATA\LOCAL\GOOGLE\CHROME SXS\APPLICATION;E:\APPDATA\ROAMING\NPM;C:\PROGRAM FILES (X86)\GOOGLE\CHROME\APPLICATION;C:\PROGRAM FILES\PHP\V7.1;C:\WINDOWS\SYSTEM32\INETSRV;D:\PYTHON36\SCRIPTS\;D:\PYTHON36\;C:\PROGRAM FILES\MICROSOFT MPI\BIN\;C:\WINDOWS\SYSTEM32;C:\WINDOWS;C:\WINDOWS\SYSTEM32\WBEM;C:\WINDOWS\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\PROGRAM FILES (X86)\NVIDIA CORPORATION\PHYSX\COMMON;C:\PROGRAM FILES (X86)\BITVISE SSH CLIENT;C:\PROGRAM FILES\MICROSOFT SQL SERVER\130\TOOLS\BINN\;C:\PROGRAM FILES\DOTNET\;C:\PROGRAM FILES\REDIS\;C:\PROGRAM FILES\MYSQL\MYSQL UTILITIES 1.6\;C:\PROGRAMDATA\CHOCOLATEY\BIN;C:\PROGRAM FILES\MICROSOFT SQL SERVER\CLIENT SDK\ODBC\130\TOOLS\BINN\;C:\PROGRAM FILES (X86)\MICROSOFT SQL SERVER\140\TOOLS\BINN\;C:\PROGRAM FILES\MICROSOFT SQL SERVER\140\TOOLS\BINN\;C:\PROGRAM FILES\MICROSOFT SQL SERVER\140\DTS\BINN\;C:\PROGRAM FILES (X86)\MICROSOFT SQL SERVER\140\DTS\BINN\;D:\nodejs\;C:\Program Files\helm\windows-amd64;C:\Program Files\IBM\Bluemix\bin;d:\is\AOMEI Backupper;d:\is\WinMerge;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;D:\GO;C:\Program Files\StarWind Software\StarWind\OpenPegasus\bin;C:\Go\bin;C:\Users\xopb\scoop\shims;D:\Python36\Scripts\;D:\Python36\;C:\Program Files (x86)\Google\Chrome\Application;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Bitvise SSH Client;C:\Program Files\PuTTY\;D:\Vagrant\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Redis\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Skype\Phone\;d:\CodeI\bin;d:\is\SQL Operations Studio\bin;d:\VSCode\bin
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  8.9.4
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+      "author": "xopb",
+      "dependencies": {
+          "compression": "^1.7.2",
+          "connect-redux-typescript": "^0.0.6",
+          "es6-promise": "^4.2.4",
+          "express": "^4.16.2",
+          "express-serve-static-core": "^0.1.1",
+          "history": "^4.7.2",
+          "isomorphic-fetch": "^2.2.1",
+          "react": "^15.6.2",
+          "react-css-modules": "^4.7.1",
+          "react-dom": "^15.6.2",
+          "react-helmet": "^5.2.0",
+          "react-redux": "^5.0.7",
+          "react-redux-async-connect": "^1.1.1",
+          "react-router": "^4.2.0",
+          "react-router-config": "^1.0.0-beta.4",
+          "react-router-dom": "^4.2.2",
+          "react-router-redux": "^4.0.8",
+          "redux": "^3.6.0",
+          "redux-async-connect": "^1.0.0-rc4",
+          "redux-connect": "^5.1.0",
+          "redux-logger": "^2.7.4",
+          "redux-thunk": "^2.2.0",
+          "serialize-javascript": "1.3.0",
+          "serve-favicon": "^2.3.2",
+          "socket.io": "^2.0.4",
+          "socket.io-client": "^2.0.4",
+          "typescript": "^2.7.2"
+      },
+      "description": "dota 2 stats panel | server",
+      "devDependencies": {
+          "@types/base16": "^1.0.1",
+          "@types/classnames": "^2.2.3",
+          "@types/express": "^4.11.1",
+          "@types/express-serve-static-core": "^4.11.1",
+          "@types/history": "^4.6.2",
+          "@types/isomorphic-fetch": "^0.0.34",
+          "@types/node": "^9.4.6",
+          "@types/react-addons-test-utils": "^0.14.16",
+          "@types/react-helmet": "^5.0.5",
+          "@types/react-redux": "^4.4.35",
+          "@types/react-router": "^4.0.22",
+          "@types/react-router-dom": "^4.2.4",
+          "@types/react-router-redux": "^5.0.12",
+          "@types/redux": "^3.6.31",
+          "@types/redux-devtools": "^3.0.36",
+          "@types/redux-devtools-dock-monitor": "^1.1.29",
+          "@types/redux-devtools-log-monitor": "^1.0.29",
+          "@types/redux-thunk": "^2.1.31",
+          "@types/serialize-javascript": "^1.3.2",
+          "@types/socket.io": "^1.4.31",
+          "@types/socket.io-client": "^1.4.32",
+          "@types/socket.io-parser": "^2.2.0",
+          "@types/source-map": "^0.5.0",
+          "@types/uglify-js": "^2.6.28",
+          "@types/webpack": "^3.8.9",
+          "@types/webpack-dev-middleware": "^2.0.0",
+          "@types/webpack-hot-middleware": "^2.16.2",
+          "autoprefixer": "^8.1.0",
+          "awesome-typescript-loader": "^4.0.1",
+          "babel-core": "6.26.0",
+          "babel-loader": "^7.1.4",
+          "babel-preset-es2015": "^6.24.1",
+          "byots": "^2.8.0-dev.20180308.3.12",
+          "classnames": "^2.2.5",
+          "cross-env": "^5.1.3",
+          "css-loader": "^0.28.10",
+          "extract-text-webpack-plugin": "^3.0.2",
+          "fetch-mock": "^5.8.1",
+          "file-loader": "^1.1.11",
+          "html-webpack-plugin": "^3.0.6",
+          "isomorphic-style-loader": "^4.0.0",
+          "istanbul-instrumenter-loader": "^0.2.0",
+          "javascript-typescript-langserver": "^2.8.0",
+          "json-loader": "^0.5.7",
+          "json-schema-to-typescript": "^5.3.3",
+          "jsonix-schema-compiler": "^2.3.9",
+          "nodemon": "^1.17.1",
+          "phantomjs-prebuilt": "^2.1.14",
+          "postcss-assets": "^5.0.0",
+          "postcss-cssnext": "^3.1.0",
+          "postcss-flexbugs-fixes": "^3.3.0",
+          "postcss-import": "^11.1.0",
+          "postcss-loader": "^2.1.1",
+          "react-cosmos": "^3.7.1",
+          "react-hot-loader": "^4.0.0",
+          "redux-mock-store": "^1.5.1",
+          "rimraf": "^2.5.4",
+          "source-map-loader": "^0.2.3",
+          "style-loader": "^0.20.2",
+          "stylelint": "^9.1.1",
+          "ts-loader": "^4.0.1",
+          "ts-node": "^5.0.1",
+          "tslib": "^1.9.0",
+          "tslint": "^5.9.1",
+          "tslint-loader": "^3.6.0",
+          "tslint-react": "^3.5.1",
+          "typescript-json-schema": "^0.21.0",
+          "typescript-uml": "^0.3.0",
+          "url-loader": "^1.0.1",
+          "webpack": "^4.1.1",
+          "webpack-cli": "^2.0.10",
+          "webpack-dev-middleware": "^3.0.1",
+          "webpack-dev-server": "^3.1.0",
+          "webpack-hot-middleware": "^2.21.2",
+          "webpack-manifest-plugin": "^2.0.0-rc.2"
+      },
+      "license": "ISC",
+      "main": "src/test.io.js",
+      "name": "d2p-server",
+      "scripts": {
+          "cosmos": "cosmos",
+          "cosmos:export": "cosmos-export",
+          "start:tsserver": "d:\\nodejs\\node E:/AppData/Roaming/npm/node_modules/javascript-typescript-langserver/lib/language-server.js",
+          "build:prod": "cross-env NODE_ENV=production npm run build",
+          "build:config": "tsc config/webpack/dev.ts config/main.ts config/webpack/index.ts --pretty",
+          "build": "webpack --config config/webpack/index.js",
+          "build:dev": "cross-env NODE_ENV=development && npm run prebuild && npm run build",
+          "clean": "rimraf build",
+          "clean:js":"node_modules\\.bin\\rimraf src/**/*.js",
+          "lint": "tslint \"src/**/**.ts*\"",
+          "postbuild": "webpack --config config/webpack/server.js",
+          "prebuild": "npm run clean && npm run build:config",
+          "prestart": "npm run build",
+          "start": "d:\\nodejs\\node --inspect build\\server.js",
+          "start:prod": "cross-env NODE_ENV=production npm start",
+          "uml:build": "tsc src/tsuml.ts --pretty --sourceMap"
+      },
+      "version": "1.0.0"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'E:\dev\d2p-server\node_modules\uws\uws_win32_57.node'

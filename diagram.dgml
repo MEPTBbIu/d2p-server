@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph DataVirtualized="True" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml"><Nodes><Node Id="src\client.tsx" Category="File" CommonLabel="src\client.tsx" Group="Expanded" Icon="File" Label="src\client.tsx" /> <Node Id="src\server.tsx" Category="File" CommonLabel="src\server.tsx" Group="Expanded" Icon="File" Label="src\server.tsx" /> <Node Id="src\server.tsx\WebpackDevMiddlewareOptionsExt" Category="CodeSchema_Interface" SchemaProperty_IsAbstract="True" CommonLabel="WebpackDevMiddlewareOptionsExt" Group="Collapsed" Icon="CodeSchema_Class" Label="WebpackDevMiddlewareOptionsExt" /><Node Id="src\server.tsx\WebpackDevMiddlewareOptionsExt\noInfo" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="noInfo" /><Node Id="src\server.tsx\WebpackDevMiddlewareOptionsExt\hot" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="hot" /><Node Id="src\server.tsx\WebpackDevMiddlewareOptionsExt\inline" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="inline" /><Node Id="src\server.tsx\WebpackDevMiddlewareOptionsExt\historyApiFallback" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="historyApiFallback" /><Node Id="src\server.tsx\WebpackDevMiddlewareOptionsExt\quiet" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="quiet" /><Node Id="src\server.tsx\RenderProps" Category="CodeSchema_Interface" SchemaProperty_IsAbstract="True" CommonLabel="RenderProps" Group="Collapsed" Icon="CodeSchema_Class" Label="RenderProps" /><Node Id="src\server.tsx\RenderProps\components" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="components" /><Node Id="src\server.tsx\RenderProps\location" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="location" /><Node Id="src\server.tsx\RenderProps\matchContext" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="matchContext" /><Node Id="src\server.tsx\RenderProps\transitionManager" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="transitionManager" /><Node Id="src\server.tsx\RenderProps\router" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="router" /><Node Id="src\server.tsx\RenderProps\params" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="params" /><Node Id="src\server.tsx\RenderProps\router" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="router" /><Node Id="src\server.tsx\RenderProps\routes" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="routes" /><Node Id="src\server.tsx\type" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="type" /><Node Id="src\server.tsx\NumStrTuple" Category="CodeSchema_Interface" SchemaProperty_IsAbstract="True" CommonLabel="NumStrTuple" Group="Collapsed" Icon="CodeSchema_Class" Label="NumStrTuple" /><Node Id="src\server.tsx\NumStrTuple\0" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="0" /><Node Id="src\server.tsx\NumStrTuple\1" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="1" /><Node Id="src\server.tsx\NumStrTuple\length" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="length" /><Node Id="src\server.tsx\NumStrTuple\2" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="2" /><Node Id="src\server.tsx\A" Category="CodeSchema_Interface" SchemaProperty_IsAbstract="True" CommonLabel="A" Group="Collapsed" Icon="CodeSchema_Class" Label="A" /><Node Id="src\server.tsx\A\a" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="a" /><Node Id="src\server.tsx\B" Category="CodeSchema_Interface" SchemaProperty_IsAbstract="True" CommonLabel="B" Group="Collapsed" Icon="CodeSchema_Class" Label="B" /><Node Id="src\server.tsx\B\b" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="b" /><Node Id="src\server.tsx\O" Category="CodeSchema_Interface" SchemaProperty_IsAbstract="True" CommonLabel="O" Group="Collapsed" Icon="CodeSchema_Class" Label="O" /><Node Id="src\server.tsx\O\foo" Category="CodeSchema_Field" SchemaProperty_IsPrivate="False" SchemaProperty_IsStatic="False" Label="foo" /></Nodes><Links><Link Source="src\server.tsx" Target="src\server.tsx\WebpackDevMiddlewareOptionsExt" Category="Contains" /><Link Source="src\server.tsx\WebpackDevMiddlewareOptionsExt" Target="src\server.tsx\WebpackDevMiddlewareOptionsExt\noInfo" Category="Contains" /><Link Source="src\server.tsx\WebpackDevMiddlewareOptionsExt" Target="src\server.tsx\WebpackDevMiddlewareOptionsExt\hot" Category="Contains" /><Link Source="src\server.tsx\WebpackDevMiddlewareOptionsExt" Target="src\server.tsx\WebpackDevMiddlewareOptionsExt\inline" Category="Contains" /><Link Source="src\server.tsx\WebpackDevMiddlewareOptionsExt" Target="src\server.tsx\WebpackDevMiddlewareOptionsExt\historyApiFallback" Category="Contains" /><Link Source="src\server.tsx\WebpackDevMiddlewareOptionsExt" Target="src\server.tsx\WebpackDevMiddlewareOptionsExt\quiet" Category="Contains" /><Link Source="src\server.tsx" Target="src\server.tsx\RenderProps" Category="Contains" /><Link Source="src\server.tsx\RenderProps" Target="src\server.tsx\RenderProps\components" Category="Contains" /><Link Source="src\server.tsx\RenderProps" Target="src\server.tsx\RenderProps\location" Category="Contains" /><Link Source="src\server.tsx\RenderProps" Target="src\server.tsx\RenderProps\matchContext" Category="Contains" /><Link Source="src\server.tsx\RenderProps" Target="src\server.tsx\RenderProps\transitionManager" Category="Contains" /><Link Source="src\server.tsx\RenderProps" Target="src\server.tsx\RenderProps\router" Category="Contains" /><Link Source="src\server.tsx\RenderProps" Target="src\server.tsx\RenderProps\params" Category="Contains" /><Link Source="src\server.tsx\RenderProps" Target="src\server.tsx\RenderProps\router" Category="Contains" /><Link Source="src\server.tsx\RenderProps" Target="src\server.tsx\RenderProps\routes" Category="Contains" /><Link Source="src\server.tsx" Target="src\server.tsx\type" Category="Contains" /><Link Source="src\server.tsx" Target="src\server.tsx\NumStrTuple" Category="Contains" /><Link Source="src\server.tsx\NumStrTuple" Target="src\server.tsx\NumStrTuple\0" Category="Contains" /><Link Source="src\server.tsx\NumStrTuple" Target="src\server.tsx\NumStrTuple\1" Category="Contains" /><Link Source="src\server.tsx\NumStrTuple" Target="src\server.tsx\NumStrTuple\length" Category="Contains" /><Link Source="src\server.tsx\NumStrTuple" Target="src\server.tsx\NumStrTuple\2" Category="Contains" /><Link Source="src\server.tsx" Target="src\server.tsx\A" Category="Contains" /><Link Source="src\server.tsx\A" Target="src\server.tsx\A\a" Category="Contains" /><Link Source="src\server.tsx" Target="src\server.tsx\B" Category="Contains" /><Link Source="src\server.tsx\B" Target="src\server.tsx\B\b" Category="Contains" /><Link Source="src\server.tsx" Target="src\server.tsx\O" Category="Contains" /><Link Source="src\server.tsx\O" Target="src\server.tsx\O\foo" Category="Contains" /></Links>﻿<Categories>
+  <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" Icon="CodeSchema_Class" />
+  <Category Id="CodeSchema_Field" Label="Field" BasedOn="CodeSchema_Member" Icon="CodeSchema_Field" />  
+  <Category Id="CodeSchema_Member" Label="Member" Icon="CodeSchema_Field" />
+  <Category Id="CodeSchema_Method" Label="Method" BasedOn="CodeSchema_Member" Icon="CodeSchema_Method" />
+  <Category Id="CodeSchema_Namespace" Label="Namespace" Icon="CodeSchema_Namespace" />
+  <Category Id="CodeSchema_Property" Label="Property" BasedOn="CodeSchema_Member" Icon="CodeSchema_Property" />
+  <Category Id="Contains" Label="Contains" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
+  <Category Id="Implements" Label="Implements" IncomingActionLabel="Implemented by" OutgoingActionLabel="Implements" />
+  <Category Id="Extends" Label="Extends" IncomingActionLabel="Extended By" OutgoingActionLabel="Extends" />
+  <Category Id="References" Label="References" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
+  <Category Id="File" Label="File" Icon="File" />
+</Categories>
+<Styles>
+  <Style TargetType="Node" GroupLabel="Namespace" ValueLabel="Has category">
+    <Condition Expression="HasCategory('CodeSchema_Namespace')" />
+    <Setter Property="Background" Value="#FF0E619A" />
+    <Setter Property="Stroke" Value="#FF0E619A" />
+    <Setter Property="Icon" Value="CodeSchema_Namespace" />
+  </Style>
+  <Style TargetType="Node" GroupLabel="Interface" ValueLabel="Has category">
+    <Condition Expression="HasCategory('CodeSchema_Interface')" />
+    <Setter Property="Background" Value="#FF1382CE" />
+    <Setter Property="Stroke" Value="#FF1382CE" />
+    <Setter Property="Icon" Value="CodeSchema_Interface" />
+  </Style>
+  <Style TargetType="Node" GroupLabel="Enumeration" ValueLabel="Has category">
+    <Condition Expression="HasCategory('CodeSchema_Enum')" />
+    <Setter Property="Background" Value="#FF1382CE" />
+    <Setter Property="Stroke" Value="#FF1382CE" />
+    <Setter Property="Icon" Value="CodeSchema_Enum" />
+    <Setter Property="LayoutSettings" Value="List" />
+  </Style>
+  <Style TargetType="Node" GroupLabel="Class" ValueLabel="Has category">
+    <Condition Expression="HasCategory('CodeSchema_Type')" />
+    <Setter Property="Background" Value="#FF1382CE" />
+    <Setter Property="Stroke" Value="#FF1382CE" />
+    <Setter Property="Icon" Value="CodeSchema_Class" />
+  </Style>
+  <Style TargetType="Node" GroupLabel="Property" ValueLabel="Has category">
+    <Condition Expression="HasCategory('CodeSchema_Property')" />
+    <Setter Property="Background" Value="#FFE0E0E0" />
+    <Setter Property="Stroke" Value="#FFE0E0E0" />
+    <Setter Property="Icon" Value="CodeSchema_Property" />
+  </Style>
+  <Style TargetType="Node" GroupLabel="Method" ValueLabel="Has category">
+    <Condition Expression="HasCategory('CodeSchema_Method')" />
+    <Setter Property="Background" Value="#FFE0E0E0" />
+    <Setter Property="Stroke" Value="#FFE0E0E0" />
+    <Setter Property="Icon" Value="CodeSchema_Method" />
+    <Setter Property="LayoutSettings" Value="List" />
+  </Style>
+  <Style TargetType="Node" GroupLabel="Field" ValueLabel="Has category">
+    <Condition Expression="HasCategory('CodeSchema_Field')" />
+    <Setter Property="Background" Value="#FFE0E0E0" />
+    <Setter Property="Stroke" Value="#FFE0E0E0" />
+    <Setter Property="Icon" Value="CodeSchema_Field" />
+  </Style>
+  <Style TargetType="Link" GroupLabel="Extends" ValueLabel="True">
+    <Condition Expression="HasCategory('Extends')" />
+    <Setter Property="Stroke" Value="#FF00A600" />
+    <Setter Property="StrokeDashArray" Value="2 0" />
+    <Setter Property="DrawArrow" Value="true" />
+  </Style>
+  <Style TargetType="Link" GroupLabel="Implements" ValueLabel="True">
+    <Condition Expression="HasCategory('Implements')" />
+    <Setter Property="Stroke" Value="#8000A600" />
+    <Setter Property="StrokeDashArray" Value="2 2" />
+    <Setter Property="DrawArrow" Value="true" />
+  </Style>
+  <Style TargetType="Link" GroupLabel="Extends" ValueLabel="True" Visibility="Hidden">
+    <Condition Expression="HasCategory('Extends') And Target.HasCategory('CodeSchema_Class')" />
+    <Setter Property="TargetDecorator" Value="OpenArrow" />
+  </Style>
+  <Style TargetType="Link" GroupLabel="Implements" ValueLabel="True" Visibility="Hidden">
+    <Condition Expression="HasCategory('Implements') And (Target.HasCategory('CodeSchema_Interface') Or Target.HasCategory('CodeSchema_Class'))" />
+    <Setter Property="TargetDecorator" Value="OpenArrow" />
+  </Style>
+  <Style TargetType="Link" GroupLabel="References" ValueLabel="True" Visibility="Hidden">
+    <Condition Expression="HasCategory('References')" />
+  </Style>
+</Styles>
+</DirectedGraph>

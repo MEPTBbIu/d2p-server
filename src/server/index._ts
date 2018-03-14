@@ -1,0 +1,47 @@
+
+
+import { createServer, Server } from 'http';
+import  express from "express";
+import socketIO from "socket.io";
+//import  "../model";
+import  {GSI} from '../model';
+
+
+
+export class GSIServer {
+
+	public static readonly PORT:number = 8080;
+	private app: express.Application;
+	private server: Server;
+	private io: SocketIO.Server;
+	private port: string | number;
+
+	constructor() {
+		this.app = express();
+		this.port = process.env.PORT || GSIServer.PORT;
+		this.server = createServer(this.app);
+		this.io = socketIO(this.server);
+	}
+
+	private listen(): void {
+		this.server.listen(this.port, () => {
+			console.log('Running server on port %s', this.port);
+		});
+
+		this.io.on('connect', (socket: any) => {
+			console.log('Connected client on port %s.', this.port);
+			socket.on('message', (m: GSI.GameState) => {
+				console.log('[server](message): %s', JSON.stringify(m));
+				this.io.emit('message', m);
+			});
+
+			socket.on('disconnect', () => {
+				console.log('Client disconnected');
+			});
+		});
+	}
+
+	public getApp(): express.Application {
+		return this.app;
+	}
+}

@@ -8,7 +8,7 @@
  * https://github.com/gaearon/react-pure-render/blob/master/src/shallowEqual.js
  *
  */
-export function shouldComponentUpdate(nextProps:any, nextState:any) {
+export function shouldComponentUpdate(this: any, nextProps:any, nextState:any) {
     return !shallowEqual(this.props, nextProps) ||
         !shallowEqual(this.state, nextState);
 }
@@ -20,7 +20,7 @@ export function shouldComponentUpdate(nextProps:any, nextState:any) {
  *
  * @return {boolean}
  */
-export function shallowEqual(objA, objB) {
+export function shallowEqual(objA:Object&{[key:string]:any}, objB:Object&{[key:string]:any}) {
   if (objA === objB) {
     return true;
   }

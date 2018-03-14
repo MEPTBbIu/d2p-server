@@ -1,0 +1,54 @@
+import * as e6p from 'es6-promise';
+(e6p as any).polyfill();
+import fetch from 'isomorphic-fetch';
+
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+const {  browserHistory } = require('react-router');
+//import { syncHistoryWithStore } from 'react-router-redux';
+//const { ReduxAsyncConnect } = require('redux-connect');
+import { configureStore } from './app/redux/store';
+import 'isomorphic-fetch';
+import routes from './app/routes';
+import { ConnectedRouter  } from 'react-router-redux';
+import {matchPath,  Router, Switch, Route } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
+
+
+const Status = ({ code, children }) => (
+  <Route render={({ staticContext }) => {
+    if (staticContext)
+      staticContext.status = code
+    return children
+  }}/>
+);
+
+const NotFound = () => (
+  <Status code={404}>
+    <div>
+      <h1>Sorry, cannot find that.</h1>
+    </div>
+  </Status>
+);
+
+const store = configureStore(
+  browserHistory,
+  window.__INITIAL_STATE__,
+);
+//const history = syncHistoryWithStore(browserHistory, store);
+//const connectedCmp = (props:any) => <ReduxAsyncConnect {...props} />;
+
+//ReactDOM.render(
+//  <Provider store={store}>
+//  { /* ConnectedRouter will use the store from Provider automatically */ }
+//  <ConnectedRouter history={browserHistory}>
+ //    <Switch>
+  //    {routes.forEach((route)=>{
+   //     <Route {...route}/>
+   //   })}
+      <Route component={NotFound}/>
+ //   </Switch>
+  //  </ConnectedRouter>
+  //  </Provider>
+//,document.getElementById("app"));

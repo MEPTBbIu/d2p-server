@@ -4,3 +4,9 @@
 /dist
 /.vs
 /temp
+/nbproject/private/
+/.awcache
+/.idea
+/data
+/nbproject
+/.alm

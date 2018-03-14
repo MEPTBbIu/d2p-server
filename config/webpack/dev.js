@@ -72,14 +72,16 @@ var getCssRules = function (ruleType) {
 exports.config = {
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
+    mode: 'development',
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx"],
-        modules: [path.resolve(__dirname), "node_modules", "app", "app/redux"]
+        modules: [path.resolve(__dirname), "node_modules", "src", "src/server"]
     },
     entry: {
         app: [
             "webpack-hot-middleware/client?reload=true",
-            "./src/client.tsx",
+            //"./src/client.tsx",
+            './src/test.io.ts'
         ]
     },
     output: {
@@ -96,9 +98,13 @@ exports.config = {
             loader: 'tslint-loader'
             },*/
             {
-                test: /\.tsx?$/,
-                loader: "react-hot-loader/webpack!awesome-typescript-loader"
+                test: /\.ts$/,
+                loader: "awesome-typescript-loader"
             },
+            /*	{
+                    test: /\.tsx?$/,
+                    loader: "react-hot-loader/webpack!awesome-typescript-loader"
+                },*/
             {
                 test: /\.jsx$/,
                 loader: "babel-loader"

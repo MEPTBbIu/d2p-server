@@ -4,9 +4,9 @@
 	"json.schemas": [
 		{
 			"fileMatch": [
-				"**.gis.json"
+				"*.gsi.json"
 			],
-			"url": "file:///E:/dev/d2p/server/temp/data/schema/gis-model.schema.json"
+			"url": "file:///E:/dev/d2p/server/data/schema/GSI_Model.schema.json"
 		}
 	],
 	"cSpell.enabledLanguageIds": [

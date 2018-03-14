@@ -1,0 +1,381 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "definitions": {
+        "GSI.Abilities": {
+            "description": "Class representing hero abilities",
+            "properties": {
+                "count": {
+                    "description": "The number of abilities",
+                    "type": "number"
+                },
+                "this": {
+                    "description": "Gets the ability at a specified index",
+                    "items": {
+                        "$ref": "#/definitions/GSI.Ability"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "GSI.Ability": {
+            "description": "Class representing ability information",
+            "properties": {
+                "ability_active": {
+                },
+                "can_cast": {
+                },
+                "cooldown": {
+                },
+                "level": {
+                },
+                "name": {
+                },
+                "passive": {
+                },
+                "ultimate": {
+                }
+            },
+            "type": "object"
+        },
+        "GSI.Auth": {
+            "description": "A class representing the authentication information for GSI",
+            "type": "object"
+        },
+        "GSI.DotaItem": {
+            "description": "Class representing item information",
+            "properties": {
+                "can_cast": {
+                    "type": "boolean"
+                },
+                "charges": {
+                    "type": "number"
+                },
+                "contains_rune": {
+                    "type": "boolean"
+                },
+                "cooldown": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "passive": {
+                }
+            },
+            "type": "object"
+        },
+        "GSI.DotaItems": {
+            "description": "Class representing item information",
+            "properties": {
+                "countInventory": {
+                    "description": "Number of items in the inventory",
+                    "type": "number"
+                },
+                "countStash": {
+                    "description": "Number of items in the stash",
+                    "type": "number"
+                },
+                "inventory": {
+                    "description": "Gets the IEnumerable of the inventory items",
+                    "items": {
+                        "$ref": "#/definitions/GSI.DotaItem"
+                    },
+                    "type": "array"
+                },
+                "stash": {
+                    "description": "Gets the IEnumerable of the stash items",
+                    "items": {
+                        "$ref": "#/definitions/GSI.DotaItem"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "GSI.EPlayerTeam": {
+            "description": "Enum list for each player team",
+            "enum": [
+                "dire",
+                "none",
+                "radiant"
+            ],
+            "type": "string"
+        },
+        "GSI.GameRulesState": {
+            "description": "Enum list for each Game State",
+            "enum": [
+                "DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP",
+                "DOTA_GAMERULES_STATE_DISCONNECT",
+                "DOTA_GAMERULES_STATE_GAME_IN_PROGRESS",
+                "DOTA_GAMERULES_STATE_HERO_SELECTION",
+                "DOTA_GAMERULES_STATE_INIT",
+                "DOTA_GAMERULES_STATE_LAST",
+                "DOTA_GAMERULES_STATE_POST_GAME",
+                "DOTA_GAMERULES_STATE_PRE_GAME",
+                "DOTA_GAMERULES_STATE_STRATEGY_TIME",
+                "DOTA_GAMERULES_STATE_TEAM_SHOWCASE",
+                "DOTA_GAMERULES_STATE_WAIT_FOR_MAP_TO_LOAD",
+                "DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD"
+            ],
+            "type": "string"
+        },
+        "GSI.Hero": {
+            "description": "Class representing hero information",
+            "properties": {
+                "alive": {
+                    "type": "boolean"
+                },
+                "break": {
+                },
+                "buyback_cooldown": {
+                    "type": "number"
+                },
+                "buyback_cost": {
+                    "type": "number"
+                },
+                "disarmed": {
+                    "type": "boolean"
+                },
+                "has_debuff": {
+                    "type": "boolean"
+                },
+                "health": {
+                    "type": "number"
+                },
+                "health_percent": {
+                },
+                "hexed": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "level": {
+                    "type": "number"
+                },
+                "magicimmune": {
+                },
+                "mana": {
+                    "type": "number"
+                },
+                "mana_percent": {
+                },
+                "max_health": {
+                    "type": "number"
+                },
+                "max_mana": {
+                    "type": "number"
+                },
+                "muted": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "respawn_seconds": {
+                    "type": "number"
+                },
+                "silenced": {
+                    "type": "boolean"
+                },
+                "stunned": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "GSI.Map": {
+            "description": "Class representing information about the map",
+            "properties": {
+                "clock_time": {
+                    "type": "number"
+                },
+                "customgamename": {
+                    "type": "string"
+                },
+                "daytime": {
+                    "type": "boolean"
+                },
+                "game_state": {
+                    "$ref": "#/definitions/GSI.GameRulesState"
+                },
+                "game_time": {
+                    "type": "number"
+                },
+                "matchid": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "nightstalker_night": {
+                    "type": "boolean"
+                },
+                "paused": {
+                    "type": "boolean"
+                },
+                "ward_purchase_cooldown": {
+                    "type": "number"
+                },
+                "win_team": {
+                    "$ref": "#/definitions/GSI.EPlayerTeam"
+                }
+            },
+            "type": "object"
+        },
+        "GSI.Player": {
+            "description": "Class representing player information",
+            "properties": {
+                "activity": {
+                },
+                "assists": {
+                    "type": "number"
+                },
+                "deaths": {
+                    "type": "number"
+                },
+                "denies": {
+                    "type": "number"
+                },
+                "gold": {
+                    "type": "number"
+                },
+                "gold_reliable": {
+                    "type": "number"
+                },
+                "gold_unreliable": {
+                    "type": "number"
+                },
+                "gpm": {
+                    "type": "number"
+                },
+                "kill_streak": {
+                    "type": "number"
+                },
+                "kills": {
+                    "type": "number"
+                },
+                "last_hits": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "steamid": {
+                },
+                "team_name": {
+                    "type": "string"
+                },
+                "xpm": {
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "GSI.Provider": {
+            "description": "Information about the provider of this GameState",
+            "properties": {
+                "appid": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "timestamp": {
+                    "type": "number"
+                },
+                "version": {
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "Partial<GSI.GameState>": {
+            "properties": {
+                "abilities": {
+                    "$ref": "#/definitions/GSI.Abilities",
+                    "description": "Information about the local player's hero abilities"
+                },
+                "auth": {
+                    "$ref": "#/definitions/GSI.Auth",
+                    "description": "Information about GSI authentication"
+                },
+                "buildings": {
+                },
+                "draft": {
+                },
+                "hero": {
+                    "$ref": "#/definitions/GSI.Hero",
+                    "description": "Information about the local player's hero"
+                },
+                "items": {
+                    "$ref": "#/definitions/GSI.DotaItems",
+                    "description": "Information about the local player's hero items"
+                },
+                "map": {
+                    "$ref": "#/definitions/GSI.Map",
+                    "description": "Information about the current map"
+                },
+                "player": {
+                    "$ref": "#/definitions/GSI.Player",
+                    "description": "Information about the local player"
+                },
+                "previously": {
+                    "$ref": "#/definitions/Partial<GSI.GameState>",
+                    "description": "A previous GameState"
+                },
+                "provider": {
+                    "$ref": "#/definitions/GSI.Provider",
+                    "description": "Information about the provider of this GameState"
+                },
+                "wearables": {
+                }
+            },
+            "type": "object"
+        }
+    },
+    "description": "A class representing various information retaining to Game State Integration of Dota 2",
+    "properties": {
+        "abilities": {
+            "$ref": "#/definitions/GSI.Abilities",
+            "description": "Information about the local player's hero abilities"
+        },
+        "auth": {
+            "$ref": "#/definitions/GSI.Auth",
+            "description": "Information about GSI authentication"
+        },
+        "buildings": {
+        },
+        "draft": {
+        },
+        "hero": {
+            "$ref": "#/definitions/GSI.Hero",
+            "description": "Information about the local player's hero"
+        },
+        "items": {
+            "$ref": "#/definitions/GSI.DotaItems",
+            "description": "Information about the local player's hero items"
+        },
+        "map": {
+            "$ref": "#/definitions/GSI.Map",
+            "description": "Information about the current map"
+        },
+        "player": {
+            "$ref": "#/definitions/GSI.Player",
+            "description": "Information about the local player"
+        },
+        "previously": {
+            "$ref": "#/definitions/Partial<GSI.GameState>",
+            "description": "A previous GameState"
+        },
+        "provider": {
+            "$ref": "#/definitions/GSI.Provider",
+            "description": "Information about the provider of this GameState"
+        },
+        "wearables": {
+        }
+    },
+    "type": "object"
+}
+

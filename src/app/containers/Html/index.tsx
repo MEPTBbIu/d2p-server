@@ -1,12 +1,13 @@
-import { IStore } from "redux/IStore";
+import { IStore } from "../../redux/IStore";
 import * as React from "react";
 import { Helmet } from "react-helmet";
+import {Store} from "redux";
 //import * as serialize from "serialize-javascript";
 
 interface IHtmlProps {
 	manifest?: any;
 	markup?: string;
-	store?: Redux.Store<IStore>;
+	store?: Store<IStore>;
 }
 
 class Html extends React.Component<IHtmlProps, {}> {

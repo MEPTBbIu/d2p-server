@@ -19,17 +19,32 @@
       ],
       "protocol": "inspector",
       "sourceMaps": true,
-   //   "sourceMapPathOverrides": {
+     "sourceMapPathOverrides": {
    //      "webpack:///./~/*": "${workspaceRoot}/node_modules/*",
    //     "webpack:///./*": "${workspaceRoot}/build/*",
 //        "webpack:///*": "${workspaceRoot}/build/*",
-//        "./": "${workspaceRoot}/build"
-   //   },
+       "./": "${workspaceRoot}/build"
+     },
       "port": 9229,
       "address": "localhost",
       "console": "internalConsole",
       "autoAttachChildProcesses": true,
-			"program": "${workspaceFolder}\\build\\server.js"
+			"program": "${workspaceFolder}\\build\\src\\start.js"
+    },
+    {
+			"type": "node",
+			"request": "launch",
+      "name": "UML",
+      "runtimeArgs": [
+        "--inspect-brk=9229"
+      ],
+      "protocol": "inspector",
+      "sourceMaps": true,
+      "port": 9229,
+      "address": "localhost",
+      "console": "internalConsole",
+      "autoAttachChildProcesses": true,
+			"program": "${workspaceFolder}\\src\\tsuml.js"
 		}
 	]
 }

@@ -1,0 +1,18 @@
+{
+  "name": "s.data",
+  "version": "1.0.0",
+  "description": "s.data typings",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "repository": "private",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run clean && tsc && node index.js",
+    "clean": "del /f index.js index.d.ts person.d.ts"
+  },
+  "dependencies": {
+    "@types/node": "^9.4.6",
+    "json-schema-to-typescript": "5.2.0",
+    "rm": "^0.1.8"
+  }
+}

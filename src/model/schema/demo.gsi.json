@@ -1,0 +1,8 @@
+{
+  "$schema": "./GSI_Model.schema.json",
+  "provider": {
+    "appid":1
+  }
+
+}
+

@@ -1,5 +1,5 @@
 {
-    "$schema":"./schema/gis-model.schema.json",
+
 "one":
     {
         "provider": {
@@ -217,5 +217,5 @@
         "previously": { "map": { "clock_time": -60 }, "hero": { "mana": 248 } },
         "auth": { "token": "" }
     }
-]
+}
 

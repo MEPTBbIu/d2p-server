@@ -1,8 +1,8 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
-    "GSI_AbilityBase": {
-      "$id": "/definitions/GSI_AbilityBase",
+    "GSI.AbilityBase": {
+      "$id": "/definitions/GSI.AbilityBase",
       "additionalProperties": false,
       "properties": {
         "ability_active": {
@@ -32,8 +32,8 @@
       ],
       "type": "object"
     },
-    "GSI_Auth": {
-      "$id": "/definitions/GSI_Auth",
+    "GSI.Auth": {
+      "$id": "/definitions/GSI.Auth",
       "additionalProperties": false,
       "properties": {
         "token": {
@@ -42,27 +42,9 @@
       },
       "type": "object"
     },
-    "GSI_GameRulesState": {
-      "$id": "/definitions/GSI_GameRulesState",
-      "default": "DOTA_GAMERULES_STATE_INIT",
-      "description": "GSI_GameRulesState",
-      "enum": [
-        "DOTA_GAMERULES_STATE_INIT",
-        "DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD",
-        "DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP",
-        "DOTA_GAMERULES_STATE_HERO_SELECTION",
-        "DOTA_GAMERULES_STATE_STRATEGY_TIME",
-        "DOTA_GAMERULES_STATE_TEAM_SHOWCASE",
-        "DOTA_GAMERULES_STATE_PRE_GAME",
-        "DOTA_GAMERULES_STATE_GAME_IN_PROGRESS",
-        "DOTA_GAMERULES_STATE_POST_GAME",
-        "DOTA_GAMERULES_STATE_DISCONNECT",
-        "DOTA_GAMERULES_STATE_WAIT_FOR_MAP_TO_LOAD"
-      ],
-      "type": "string"
-    },
-    "GSI_Hero": {
-      "$id": "/definitions/GSI_Hero",
+
+    "GSI.Hero": {
+      "$id": "/definitions/GSI.Hero",
       "additionalProperties": false,
       "patternProperties": {
         "^(talent_)+[0-8]{1}": {
@@ -143,17 +125,35 @@
       },
       "type": "object"
     },
-    "GSI_HeroAbilities": {
+    "GSI.HeroAbilities": {
+      "$id": "/definitions/GSI.HeroAbilities",
+      "additionalProperties": false,
+      "properties": {
+        "ability0": {
+          "$ref": "#/definitions/GSI.AbilityBase"
+        },
+        "ability1": {
+          "$ref": "#/definitions/GSI.AbilityBase"
+        },
+        "ability2": {
+          "$ref": "#/definitions/GSI.AbilityBase"
+        },
+        "ability3": {
+          "$ref": "#/definitions/GSI.AbilityBase"
+        }
+      }
+    },
+    "GSI.HeroAbilities_": {
       "additionalProperties": false,
       "patternProperties": {
         "^(ability)+[0-3]{1}$": {
-          "$ref": "#/definitions/GSI_AbilityBase"
+          "$ref": "#/definitions/GSI.AbilityBase"
         }
       },
       "type": "object"
     },
-    "GSI_ItemBase": {
-      "$id": "/definitions/GSI_ItemBase",
+    "GSI.ItemBase": {
+      "$id": "/definitions/GSI.ItemBase",
       "properties": {
         "can_cast": {
           "type": "boolean"
@@ -182,10 +182,10 @@
       ],
       "type": "object"
     },
-    "GSI_Map": {
-      "$id": "/definitions/GSI_Map",
+    "GSI.Map": {
+      "$id": "/definitions/GSI.Map",
       "additionalProperties": false,
-      "description": "GSI_Map",
+      "description": "GSI.Map",
       "properties": {
         "clock_time": {
           "type": "number"
@@ -198,7 +198,7 @@
           "type": "boolean"
         },
         "game_state": {
-          "$ref": "#/definitions/GSI_GameRulesState"
+          "$ref": "GSI_Enums.schema.json#/definitions/GSI.GameRulesState"
         },
         "game_time": {
           "type": "number"
@@ -220,13 +220,14 @@
           "type": "number"
         },
         "win_team": {
-          "$ref": "#/definitions/GSI_PlayerTeam"
+          "$ref": "GSI_Enums.schema.json#/definitions/GSI.PlayerTeam"
         }
       },
       "type": "object"
     },
-    "GSI_Building": {
-      "$id": "/definitions/GSI_Building",
+    "GSI.Building": {
+      "$id": "/definitions/GSI.Building",
+      "title":"GSI.Building",
       "additionalProperties": false,
       "type": "object",
       "properties": {
@@ -238,107 +239,89 @@
         }
       }
     },
-    "GSI_RadiantBuildings": {
-      "$id": "/definitions/GSI_RadiantBuildings",
+    "GSI.RadiantBuildings_": {
+      "$id": "/definitions/GSI.RadiantBuildings_",
       "additionalProperties": false,
       "title": "object",
       "patternProperties": {
         "^(good_rax_)+[(melee),(range)]+[(_top),(_mid),(_bot)]": {
-          "$ref": "#/definitions/GSI_Building",
+          "$ref": "#/definitions/GSI.Building",
           "type": "object"
         },
         "^(dota_goodguys_tower)+[1-4]+[(_top),(_mid),(_bot)]": {
-          "$ref": "#/definitions/GSI_Building",
+          "$ref": "#/definitions/GSI.Building",
           "type": "object"
         }
       },
       "properties": {
         "dota_goodguys_fort": {
-          "$ref": "#/definitions/GSI_Building",
+          "$ref": "#/definitions/GSI.Building",
           "type": "object"
         }
       }
     },
-    "GSI_RadiantBuildings2": {
-      "$id": "/definitions/GSI_RadiantBuildings2",
+    "GSI.RadiantBuildings": {
+      "$id": "/definitions/GSI.RadiantBuildings",
       "additionalProperties": false,
       "title": "object",
       "properties": {
         "dota_goodguys_tower1_top": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "dota_goodguys_tower2_top": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "dota_goodguys_tower3_top": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "dota_goodguys_tower1_mid": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "dota_goodguys_tower2_mid": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "dota_goodguys_tower3_mid": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "dota_goodguys_tower1_bot": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "dota_goodguys_tower2_bot": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "dota_goodguys_tower3_bot": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "dota_goodguys_tower4_top": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "dota_goodguys_tower4_bot": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "good_rax_melee_top": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "good_rax_range_top": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "good_rax_melee_mid": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "good_rax_range_mid": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "good_rax_melee_bot": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "good_rax_range_bot": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         },
         "dota_goodguys_fort": {
-          "$ref": "#/definitions/GSI_Building",
-          "type": "object"
+          "$ref": "#/definitions/GSI.Building"
         }
       }
     },
-    "GSI_Wearables": {
+    "GSI.Wearables": {
       "type": "object",
       "patternProperties": {
         "^(wearable)+[0-7]{1}": {
@@ -349,64 +332,60 @@
         }
       }
     },
-    "GSI_Buildings": {
+    "GSI.Buildings": {
       "type": "object",
-      "$id": "/definitions/GSI_Buildings",
+      "$id": "/definitions/GSI.Buildings",
+      "additionalProperties": false,
       "properties": {
         "radiant": {
-          "$ref": "#/definitions/GSI_RadiantBuildings",
-          "type": "object"
+          "$ref": "#/definitions/GSI.RadiantBuildings"
         }
       }
     },
-    "GSI_GameState": {
-      "$id": "/definitions/GSI_GameState",
+    "GSI.GameState": {
+      "$id": "/definitions/GSI.GameState",
       "additionalProperties": false,
       "minProperties": 1,
       "properties": {
-        "$schema": {
-          "default": "./schema/GSI_Model.schema.json",
-          "type": "string"
-        },
-        "abilities": {
-          "$ref": "#/definitions/GSI_HeroAbilities"
+             "abilities": {
+          "$ref": "#/definitions/GSI.HeroAbilities"
         },
         "auth": {
-          "$ref": "#/definitions/GSI_Auth"
+          "$ref": "#/definitions/GSI.Auth"
         },
         "hero": {
-          "$ref": "#/definitions/GSI_Hero"
+          "$ref": "#/definitions/GSI.Hero"
         },
         "items": {
-          "$ref": "#/definitions/GSI_PlayerItems"
+          "$ref": "#/definitions/GSI.PlayerItems"
         },
         "map": {
-          "$ref": "#/definitions/GSI_Map"
+          "$ref": "#/definitions/GSI.Map"
         },
         "player": {
-          "$ref": "#/definitions/GSI_Player"
+          "$ref": "#/definitions/GSI.Player"
         },
         "previously": {
-          "$ref": "#/definitions/GSI_PreviousGameState"
+          "$ref": "#/definitions/GSI.PreviousGameState"
         },
         "provider": {
-          "$ref": "#/definitions/GSI_Provider"
+          "$ref": "#/definitions/GSI.Provider"
         },
         "draft": {
           "type": "object"
         },
         "wearables": {
-          "$ref": "#/definitions/GSI_Wearables"
+          "$ref": "#/definitions/GSI.Wearables"
         },
         "buildings": {
-          "$ref": "#/definitions/GSI_Buildings"
+          "$ref": "#/definitions/GSI.Buildings"
         }
       },
-      "title": "GSI Message",
+      "title": "GSI Game State",
       "type": "object"
     },
-    "GSI_PreviousGameState": {
-      "$id": "/definitions/GSI_PreviousGameState",
+    "GSI.PreviousGameState": {
+      "$id": "/definitions/GSI.PreviousGameState",
       "additionalProperties": false,
       "properties": {
         "abilities": {
@@ -415,7 +394,7 @@
               "type": "boolean"
             },
             {
-              "$ref": "#/definitions/GSI_HeroAbilities"
+              "$ref": "#/definitions/GSI.HeroAbilities"
             }
           ]
         },
@@ -425,7 +404,7 @@
               "type": "boolean"
             },
             {
-              "$ref": "#/definitions/GSI_Auth"
+              "$ref": "#/definitions/GSI.Auth"
             }
           ]
         },
@@ -435,7 +414,7 @@
               "type": "boolean"
             },
             {
-              "$ref": "#/definitions/GSI_Hero"
+              "$ref": "#/definitions/GSI.Hero"
             }
           ]
         },
@@ -445,7 +424,7 @@
               "type": "boolean"
             },
             {
-              "$ref": "#/definitions/GSI_PlayerItems"
+              "$ref": "#/definitions/GSI.PlayerItems"
             }
           ]
         },
@@ -455,7 +434,7 @@
               "type": "boolean"
             },
             {
-              "$ref": "#/definitions/GSI_Map"
+              "$ref": "#/definitions/GSI.Map"
             }
           ]
         },
@@ -465,7 +444,7 @@
               "type": "boolean"
             },
             {
-              "$ref": "#/definitions/GSI_Player"
+              "$ref": "#/definitions/GSI.Player"
             }
           ]
         },
@@ -475,7 +454,7 @@
               "type": "boolean"
             },
             {
-              "$ref": "#/definitions/GSI_Provider"
+              "$ref": "#/definitions/GSI.Provider"
             }
           ]
         },
@@ -495,7 +474,7 @@
               "type": "boolean"
             },
             {
-              "$ref": "#/definitions/GSI_Wearables"
+              "$ref": "#/definitions/GSI.Wearables"
             }
           ]
         },
@@ -505,7 +484,7 @@
               "type": "boolean"
             },
             {
-              "$ref": "#/definitions/GSI_Buildings"
+              "$ref": "#/definitions/GSI.Buildings"
             }
           ]
         }
@@ -513,12 +492,12 @@
       "title": "GSI Previous Game State",
       "type": "object"
     },
-    "GSI_Player": {
-      "$id": "/definitions/GSI_Player",
+    "GSI.Player": {
+      "$id": "/definitions/GSI.Player",
       "additionalProperties": false,
       "properties": {
         "activity": {
-          "$ref": "#/definitions/GSI_PlayerActivity"
+          "$ref": "#/definitions/GSI.PlayerActivity"
         },
         "assists": {
           "type": "number"
@@ -566,7 +545,7 @@
           "type": "string"
         },
         "team_name": {
-          "$ref": "#/definitions/GSI_PlayerTeam"
+          "$ref": "GSI_Enums.schema.json#/definitions/GSI.PlayerTeam"
         },
         "xpm": {
           "type": "number"
@@ -574,8 +553,8 @@
       },
       "type": "object"
     },
-    "GSI_PlayerActivity": {
-      "$id": "/definitions/GSI_PlayerActivity",
+    "GSI.PlayerActivity": {
+      "$id": "/definitions/GSI.PlayerActivity",
       "default": "undefined",
       "enum": [
         "playing",
@@ -583,32 +562,74 @@
         "undefined"
       ]
     },
-    "GSI_PlayerItems": {
+    "GSI.PlayerItems": {
+      "$id": "/definitions/GSI.PlayerItems",
+      "additionalProperties": false,
+      "properties": {
+        "slot0": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        },
+        "slot1": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        },
+        "slot2": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        },
+        "slot3": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        },
+        "slot4": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        },
+        "slot5": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        },
+        "slot6": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        },
+        "slot7": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        },
+        "slot8": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        },
+        "stash0": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        },
+        "stash1": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        },
+        "stash2": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        },
+        "stash3": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        },
+        "stash4": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        },
+        "stash5": {
+          "$ref": "#/definitions/GSI.ItemBase"
+        }
+      },
+      "type": "object"
+    },
+    "GSI.PlayerItems_": {
       "additionalProperties": false,
       "patternProperties": {
         "^(slot)+[0-8]{1}$": {
-          "$ref": "#/definitions/GSI_ItemBase"
+          "$ref": "#/definitions/GSI.ItemBase"
         },
         "^(stash)+[0-5]{1}$": {
-          "$ref": "#/definitions/GSI_ItemBase",
+          "$ref": "#/definitions/GSI.ItemBase",
           "type": "object"
         }
       },
       "type": "object"
     },
-    "GSI_PlayerTeam": {
-      "$id": "/definitions/GSI_PlayerTeam",
-      "default": "undefined",
-      "enum": [
-        "dire",
-        "radiant",
-        "none",
-        "undefined"
-      ],
-      "type": "string"
-    },
-    "GSI_Provider": {
-      "$id": "/definitions/GSI_Provider",
+
+    "GSI.Provider": {
+      "$id": "/definitions/GSI.Provider",
       "additionalProperties": false,
       "description": "Провайдер предоставляющий даные.",
       "properties": {
@@ -658,20 +679,20 @@
   "description": "A single Message or an array of Messages",
   "oneOf": [
     {
-      "$ref": "#/definitions/GSI_Message",
+      "$ref": "#/definitions/GSI.GameState",
       "type": "object"
     },
     {
       "minProperties": 1,
       "patternProperties": {
         "^[0-9]{4}": {
-          "$ref": "#/definitions/GSI_Message",
+          "$ref": "#/definitions/GSI.GameState",
           "type": "object"
         }
       },
       "properties": {
         "$schema": {
-          "default": "./schema/GSI_Model.schema.json",
+          "default": "GSI.Model.schema.json",
           "type": "string"
         }
       },

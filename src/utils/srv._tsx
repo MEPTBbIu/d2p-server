@@ -1,0 +1,65 @@
+import {BrowserRouter } from 'react-router-dom';
+import * as renderRoutes from 'react-router-config/renderRoutes';
+import { ReduxAsyncConnect, asyncConnect, reducer as reduxAsyncConnect } from 'redux-connect';
+import * as React from 'react';
+import { hydrate } from 'react-dom';
+import { createStore, combineReducers } from 'redux';
+import {Provider} from "react-redux";
+// 0. Params
+interface AppProps{
+	lunch:any; route:any;
+}
+
+// 1. Connect your data, similar to react-redux @connect
+@asyncConnect([
+	{
+		key: 'lunch',
+		promise: ({ match: { params }, helpers }) => Promise.resolve({ id: 1, name: 'Borsch' })
+	}
+])
+class App extends React.Component<AppProps> {
+	render() {
+		// 2. access data as props
+		const { lunch, route } = this.props;
+
+		return (
+			<div>
+				{lunch.name}
+				{renderRoutes(route.routes)}
+			</div>
+		);
+	}
+}
+
+class Child extends React.Component {
+	render() {
+		return <div>{'child component'}</div>;
+	}
+}
+
+const routes = [
+	{
+		path: '/',
+		component: App,
+		routes: [
+			{
+				path: '/child',
+				exact: true,
+				component: Child
+			}
+		]
+	}
+];
+
+// 2. Connect redux async reducer
+const store = createStore(combineReducers({ reduxAsyncConnect }), window.__data);
+const helpers = {};
+// 3. Render `Router` with ReduxAsyncConnect middleware
+hydrate(
+	<Provider store={store} key="provider">
+		<BrowserRouter>
+			<ReduxAsyncConnect routes={routes} helpers={helpers} />
+		</BrowserRouter>
+	</Provider>,
+	document.getElementById("body")
+);

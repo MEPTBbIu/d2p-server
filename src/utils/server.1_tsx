@@ -1,0 +1,142 @@
+/// <reference types="webpack"/>
+/// <reference types="node"/>
+
+import * as bodyParser from 'body-parser';
+import * as e6p from 'es6-promise';
+import { EventEmitter } from 'events';
+import Express from 'express';
+import { Request, Response } from 'express-serve-static-core';
+import fetch from 'isomorphic-fetch';
+import * as React from 'react';
+import * as ReactDOMServer from 'react-dom/server';
+import { Provider } from 'react-redux';
+import ReactRouter, { match, MemoryRouter as Router, matchPath } from 'react-router';
+import  RRR  from 'react-router-redux';
+import { isArray } from 'util';
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
+import history,{createMemoryHistory} from "history";
+
+import appConfig from '../config/main';
+import { Html } from './app/containers';
+import { configureStore } from './app/redux/store';
+import routes from './app/routes';
+
+import * as reduxConnect from 'redux-connect';
+
+(e6p as any).polyfill();
+const { ReduxAsyncConnect, loadOnServer } = require('redux-connect');
+const manifest = require('../build/manifest.json');
+const path = require('path');
+const compression = require('compression');
+const Chalk = require('chalk');
+const favicon = require('serve-favicon');
+
+const app = Express();
+
+app.use(compression());
+app.use(favicon(path.join(__dirname, 'public/favicon.ico')));
+app.use('/public', Express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+interface WebpackDevMiddlewareOptionsExt extends webpackDevMiddleware.Options{
+		noInfo?: boolean
+		hot?: boolean
+		inline?: boolean
+		historyApiFallback?: boolean
+		quiet?: boolean
+}
+
+if (process.env.NODE_ENV !== 'production') {
+
+  const webpackDevConfig: webpack.Configuration =  require('../config/dev);
+	const webpackCompiler = webpack(webpackDevConfig);
+	const webpackDevMiddlewareOptions:WebpackDevMiddlewareOptionsExt = {
+		publicPath: webpackDevConfig.output.publicPath,
+    stats: { colors: true },
+    logLevel:"info",
+    serverSideRender:true,
+    watchOptions:{
+      aggregateTimeout:100
+    },
+		noInfo: true,
+		hot: true,
+		inline: true,
+		lazy: false,
+		historyApiFallback: true,
+		quiet: true
+	};
+	app.use(webpackDevMiddleware(webpackCompiler, webpackDevMiddlewareOptions));
+
+	app.use(webpackHotMiddleware(webpackCompiler));
+}
+
+
+app.post('/gsi', (req, res) => {
+	const location = req.url;
+	res.status(200).send('ok');
+});
+
+interface RenderProps {
+	components: Array<JSX.Element>;
+	location: Location;
+	matchContext: {
+		transitionManager: {};
+		router: Router;
+	};
+	params: {};
+	router: Router;
+	routes: Array<{}>;
+}
+
+
+app.get('*', (req, res) => {
+	const location = req.url;
+	const memoryHistory = createMemoryHistory({initialEntries:[req.originalUrl]}) ;
+	const store = configureStore(memoryHistory);
+ // const history = syncHistoryWithStore(memoryHistory, store);
+ function match(param:{ history, routes, location }, handler:(error: Error, redirectLocation: Location, renderProps: RenderProps)=>void): void{
+	 const { history, routes, location } = param;
+	 let m = matchPath("/", param);
+	 if(m)
+	 	handler(null, location, {...this.props})
+ };
+
+ match({ history, routes, location },
+     (error: Error, redirectLocation: Location, renderProps: RenderProps) => {
+		if (error) {
+			res.status(500).send(error.message);
+		} else if (redirectLocation) {
+			res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+		} else if (renderProps) {
+			const asyncRenderData = Object.assign({}, renderProps, { store });
+
+			loadOnServer(asyncRenderData).then(() => {
+				const markup = ReactDOMServer.renderToString(
+					<Provider store={store} key="provider">
+						<ReduxAsyncConnect {...renderProps} />
+					</Provider>
+				);
+				res.status(200).send(renderHTML(markup, store));
+			});
+		} else {
+			res.status(404).send('Not Found?');
+		}
+	});
+});
+
+app.listen(appConfig.port as number, appConfig.host, (err: Error) => {
+	if (err) {
+		console.error(Chalk.bgRed(err));
+	} else {
+		console.info(Chalk.black.bgGreen(`\n\nListening at http://${appConfig.host}:${appConfig.port}\n`));
+	}
+});
+
+function renderHTML(markup: string, store: any) {
+	const html = ReactDOMServer.renderToString(<Html markup={markup} manifest={manifest} store={store} />);
+
+	return `<!doctype html> ${html}`;
+}

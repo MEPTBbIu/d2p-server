@@ -1,0 +1,34 @@
+// {type:class}
+[webpackDevMiddleware.Options||]^[<<WebpackDevMiddlewareOptionsExt>>|+noInfo:boolean;+hot:boolean;+inline:boolean;+historyApiFallback:boolean;+quiet:boolean|]
+[React.Component||]^[About||+render()]
+[React.Component||]^[App||+render()]
+[React.Component||]^[Home||+render()]
+[React.Component||]^[Html||-resolve(files:string［］);+render()]
+[Object||]^[<<IData>>|+num:number;+str:string|]
+[Object||]^[<<IParams>>|+num:number|]
+[<<RenderProps>>|+components:Array<JSX.Element>;+location:H.Location;+matchContext:TypeLiteral;+params:TypeLiteral;+router:StaticRouter;+routes:Array<Route>|]->undefined
+[<<RenderProps>>|+components:Array<JSX.Element>;+location:H.Location;+matchContext:TypeLiteral;+params:TypeLiteral;+router:StaticRouter;+routes:Array<Route>|]->undefined
+[<<RenderProps>>|+components:Array<JSX.Element>;+location:H.Location;+matchContext:TypeLiteral;+params:TypeLiteral;+router:StaticRouter;+routes:Array<Route>|]->undefined
+[<<RenderProps>>|+components:Array<JSX.Element>;+location:H.Location;+matchContext:TypeLiteral;+params:TypeLiteral;+router:StaticRouter;+routes:Array<Route>|]->undefined
+[<<RenderProps>>|+components:Array<JSX.Element>;+location:H.Location;+matchContext:TypeLiteral;+params:TypeLiteral;+router:StaticRouter;+routes:Array<Route>|]->undefined
+[<<IHtmlProps>>|+manifest:any;+markup:string;+store:Redux.Store<IStore>|]->undefined
+[<<IHtmlProps>>|+manifest:any;+markup:string;+store:Redux.Store<IStore>|]->[<<IStore>>||]
+[<<IDotaMap>>|+clock_time:number;+customgamename:string;+daytime:boolean;+game_state:GameRulesState;+game_time:number;+matchid:number;+name:string;+nightstalker_night:boolean;+paused:boolean;+ward_purchase_cooldown:number;+win_team:EPlayerTeam|]->undefined
+[<<IDotaMap>>|+clock_time:number;+customgamename:string;+daytime:boolean;+game_state:GameRulesState;+game_time:number;+matchid:number;+name:string;+nightstalker_night:boolean;+paused:boolean;+ward_purchase_cooldown:number;+win_team:EPlayerTeam|]->undefined
+[<<IGameState>>|+auth:IAuth;+provider:IGameStateProvider;+map:IDotaMap;+player:IPlayer;+hero:IHero;+abilities:IAbilities;+items:IDotaItems;+previously:Partial<IGameState> | null;+draft:any;+wearables:any;+buildings:any|]->[<<IAuth>>||]
+[<<IGameState>>|+auth:IAuth;+provider:IGameStateProvider;+map:IDotaMap;+player:IPlayer;+hero:IHero;+abilities:IAbilities;+items:IDotaItems;+previously:Partial<IGameState> | null;+draft:any;+wearables:any;+buildings:any|]->[<<IGameStateProvider>>|+name:string;+appid:number;+version:number;+timestamp:number|]
+[<<IGameState>>|+auth:IAuth;+provider:IGameStateProvider;+map:IDotaMap;+player:IPlayer;+hero:IHero;+abilities:IAbilities;+items:IDotaItems;+previously:Partial<IGameState> | null;+draft:any;+wearables:any;+buildings:any|]->[<<IDotaMap>>|+clock_time:number;+customgamename:string;+daytime:boolean;+game_state:GameRulesState;+game_time:number;+matchid:number;+name:string;+nightstalker_night:boolean;+paused:boolean;+ward_purchase_cooldown:number;+win_team:EPlayerTeam|]
+[<<IGameState>>|+auth:IAuth;+provider:IGameStateProvider;+map:IDotaMap;+player:IPlayer;+hero:IHero;+abilities:IAbilities;+items:IDotaItems;+previously:Partial<IGameState> | null;+draft:any;+wearables:any;+buildings:any|]->[<<IPlayer>>|+steamid:any;+name:string;+activity:any;+kills:number;+deaths:number;+assists:number;+last_hits:number;+denies:number;+kill_streak:number;+team_name:string;+gold:number;+gold_reliable:number;+gold_unreliable:number;+gpm:number;+xpm:number|]
+[<<IGameState>>|+auth:IAuth;+provider:IGameStateProvider;+map:IDotaMap;+player:IPlayer;+hero:IHero;+abilities:IAbilities;+items:IDotaItems;+previously:Partial<IGameState> | null;+draft:any;+wearables:any;+buildings:any|]->[<<IHero>>|+id:string;+name:string;+level:number;+alive:boolean;+respawn_seconds:number;+buyback_cost:number;+buyback_cooldown:number;+health:number;+max_health:number;+health_percent:any;+mana:number;+max_mana:number;+mana_percent:any;+silenced:boolean;+stunned:boolean;+disarmed:boolean;+magicimmune:any;+hexed:boolean;+muted:boolean;+break:any;+has_debuff:boolean|]
+[<<IGameState>>|+auth:IAuth;+provider:IGameStateProvider;+map:IDotaMap;+player:IPlayer;+hero:IHero;+abilities:IAbilities;+items:IDotaItems;+previously:Partial<IGameState> | null;+draft:any;+wearables:any;+buildings:any|]->[<<IAbilities>>|+count:number;+this:TypeLiteral|]
+[<<IGameState>>|+auth:IAuth;+provider:IGameStateProvider;+map:IDotaMap;+player:IPlayer;+hero:IHero;+abilities:IAbilities;+items:IDotaItems;+previously:Partial<IGameState> | null;+draft:any;+wearables:any;+buildings:any|]->[<<IDotaItems>>|+countInventory:number;+inventory:IDotaItem［］;+countStash:number;+stash:IDotaItem［］|]
+[<<IGameState>>|+auth:IAuth;+provider:IGameStateProvider;+map:IDotaMap;+player:IPlayer;+hero:IHero;+abilities:IAbilities;+items:IDotaItems;+previously:Partial<IGameState> | null;+draft:any;+wearables:any;+buildings:any|]->undefined
+[<<IGameStateListener>>|+currentGameState:IGameState;+port:number;+running:boolean|]->[<<IGameState>>|+auth:IAuth;+provider:IGameStateProvider;+map:IDotaMap;+player:IPlayer;+hero:IHero;+abilities:IAbilities;+items:IDotaItems;+previously:Partial<IGameState> | null;+draft:any;+wearables:any;+buildings:any|]
+[<<Window>>|+__REDUX_DEVTOOLS_EXTENSION_COMPOSE__:any;+__INITIAL_STATE__:any;+__data:any|]
+[<<ObjectConstructor>>||+assign(target:any,sources:any［］):any]
+[<<process>>|+env:TypeLiteral|]
+[<<DataGetterInterface>>||]
+[<<TypedDataLoaderProps>>||+dataLoader():DataGetter<D, P>]
+[<<IDotaItem>>|+name:string;+contains_rune:boolean;+can_cast:boolean;+cooldown:number;+passive:any;+charges:number|]
+[<<IAbility>>|+name:any;+level:any;+can_cast:any;+passive:any;+ability_active:any;+cooldown:any;+ultimate:any|]
+[<<IAttributes>>||]
