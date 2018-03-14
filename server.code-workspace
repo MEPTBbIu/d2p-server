@@ -21,7 +21,13 @@
 		"typescript.tsdk": "d2p-server\\node_modules\\typescript\\lib",
 		"json.schemas": [
 			{
-				"*.mdb.json": "E:\\dev\\d2p-server\\src\\model\\schema\\GSI.GameState.schema.json"
+				"*.mdb.json": "https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.GameState.schema.json"
+
+			}
+		],
+		"json.personalSchemas": [
+			{
+				"*.mdb.json":"https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.GameState.schema.json"
 			}
 		]
 	}
