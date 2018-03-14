@@ -1,7 +1,8 @@
 {
-    "$id": "GSI.MongoDB.Model",
+    "$id": "GSI.MongoDB",
     "$schema": "http://json-schema.org/draft-06/schema#",
     "definitions": {
+        "GSI_Enums":{"$ref":"https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.Enums.schema.json"},
         "GSI_AbilityBase": {
             "$id": "/definitions/GSI_AbilityBase",
             "additionalProperties": false,
@@ -19,7 +20,7 @@
                     "type": "number"
                 },
                 "name": {
-                    "$ref": "GSI.Enums#/definitions/npc_dota_hero_ability"
+                    "$ref": "GSI_Enums#/definitions/npc_dota_hero_ability"
                 },
                 "passive": {
                     "type": "boolean"
@@ -193,7 +194,7 @@
                     "type": "boolean"
                 },
                 "name": {
-                    "$ref": "GSI.Enums#/definitions/npc_dota_hero"
+                    "$ref": "GSI_Enums#/definitions/npc_dota_hero"
                 },
                 "respawn_seconds": {
                     "type": "number"
@@ -239,7 +240,7 @@
                     "type": "number"
                 },
                 "name": {
-                    "$ref": "GSI.Enums#/definitions/npc_dota_items"
+                    "$ref": "GSI_Enums#/definitions/npc_dota_items"
                 },
                 "passive": {
                     "type": "boolean"
@@ -657,14 +658,6 @@
             "type": "object"
         }
     },
-    "dependencies": 
-        {
-            "GSI.Enums":{
-                "$ref": "https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.Enums.schema.json/GSI.Enums"
-            }
-            
-        
-        },
     "description": "array of Messages",
     "items": {
         "$ref": "#/definitions/GSI_Message",
