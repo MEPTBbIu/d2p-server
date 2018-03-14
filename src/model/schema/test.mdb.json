@@ -1,4 +1,10 @@
-[
+[{
+    "abilities":{
+        "ability0":{
+            "name":"npc_dota_hero_drow_ranger"
+        }
+    }
+},
     {
         "_id": "1519662951",
         "auth": {

@@ -23,13 +23,13 @@
                 "fileMatch": [
                     "/**/*.gsi.json"
                 ],
-                "url": "https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI_Model.schema.json"
+                "url": "https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.Model.schema.json"
             },
             {
                 "fileMatch": [
                     "/**/*.mdb.json"
                 ],
-                "url": "https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.GameState.schema.json"
+                "url": "https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.MongoDB.Model.schema.json"
             }
         ],
         "typescript.tsdk": "d2p-server\\node_modules\\typescript\\lib"
