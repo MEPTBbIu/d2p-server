@@ -1,5 +1,4 @@
 {
-	"id": "GSI.MongoDB",
 	"$schema": "http://json-schema.org/draft-06/schema#",
 	"definitions": {
 		"npc_dota_items": {
