@@ -1,0 +1,177 @@
+/// <reference types="webpack"/>
+/// <reference types="node"/>
+
+import * as bodyParser from "body-parser";
+import * as e6p from "es6-promise";
+import { EventEmitter } from "events";
+import express from "express";
+import { Request, Response } from "express-serve-static-core";
+import fetch from "isomorphic-fetch";
+import * as React from "react";
+import * as ReactDOMServer from "react-dom/server";
+import { Provider } from "react-redux";
+import ReactRouter, {
+  match,
+  MemoryRouter,
+  matchPath,
+  Route,
+  StaticRouter
+} from "react-router";
+import RRR from "react-router-redux";
+import { isArray } from "util";
+import webpack from "webpack";
+import webpackDevMiddleware from "webpack-dev-middleware";
+import webpackHotMiddleware from "webpack-hot-middleware";
+import history, { createMemoryHistory } from "history";
+
+import appConfig from "../config/main";
+import { Html } from "./app/containers";
+import AApp from "./app/containers/AApp";
+import { configureStore } from "./app/redux/store";
+import routes from "./app/routes";
+import GSI from "./model/gsi";
+import H from "history";
+//import * as reduxConnect from 'redux-connect';
+
+(e6p as any).polyfill();
+//const { ReduxAsyncConnect, loadOnServer } = require('redux-connect');
+const manifest = require("../build/manifest.json");
+const path = require("path");
+const compression = require("compression");
+const Chalk = require("chalk");
+const favicon = require("serve-favicon");
+
+const app = express();
+
+app.use(compression());
+app.use(favicon(path.join(__dirname, "public/favicon.ico")));
+app.use("/public", express.static(path.join(__dirname, "public")));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+interface WebpackDevMiddlewareOptionsExt extends webpackDevMiddleware.Options {
+  noInfo?: boolean;
+  hot?: boolean;
+  inline?: boolean;
+  historyApiFallback?: boolean;
+  quiet?: boolean;
+}
+
+if (process.env.NODE_ENV !== "production") {
+  const webpackDevConfig: webpack.Configuration = require("../config/webpack/dev.js").config;
+  const webpackCompiler = webpack(webpackDevConfig);
+  const webpackDevMiddlewareOptions: WebpackDevMiddlewareOptionsExt = {
+    publicPath: webpackDevConfig.output.publicPath,
+    stats: { colors: true },
+    noInfo: true,
+    hot: true,
+    inline: true,
+    lazy: false,
+    historyApiFallback: true,
+    quiet: true
+  };
+  app.use(webpackDevMiddleware(webpackCompiler, webpackDevMiddlewareOptions));
+
+  app.use(webpackHotMiddleware(webpackCompiler));
+}
+
+app.post("/gsi", (req, res) => {
+  const location = req.url;
+  let state = req.body as  GSI.IGameState;
+
+  res.status(200).send("ok");
+});
+
+interface RenderProps {
+  components: Array<JSX.Element>;
+  location: H.Location;
+  matchContext: {
+    transitionManager: {};
+    router: StaticRouter;
+  };
+  params: {};
+  router: StaticRouter;
+  routes: Array<Route>;
+}
+import { matchPath as _matchPath } from "react-router-dom";
+
+function renderHTML(markup: string, store: any) {
+  const html = ReactDOMServer.renderToString(
+    <Html markup={markup} manifest={manifest} store={store} />
+  );
+
+  return `<!doctype html> ${html}`;
+}
+
+app.get("*", (req, res) => {
+  // inside a request
+  const promises = [];
+  // use `some` to imitate `<Switch>` behavior of selecting only
+  // the first to match
+  routes.some(route => {
+    // use `matchPath` here
+    const location = req.url;
+    const memoryHistory = createMemoryHistory({
+      initialEntries: [req.originalUrl]
+    });
+    const store = configureStore(memoryHistory);
+    // const history = syncHistoryWithStore(memoryHistory, store);
+    const context = {};
+
+    const match = _matchPath<{ type?: string }>(req.path, route);
+    if (match) {
+      const asyncRenderData = Object.assign({}, route, { store });
+      if (route.dataLoader) {
+        const loader = route.dataLoader();
+        //  promises.push(loader(match.params))
+      }
+
+      const markup = ReactDOMServer.renderToString(
+        <Provider store={store} key="provider">
+          <StaticRouter location={req.url} context={context}>
+            <AApp/>
+          </StaticRouter>
+        </Provider>
+      );
+      res.status(200).send(renderHTML(markup, store));
+    }
+    return match !== null;
+  });
+
+  //Promise.all(promises).then(data => {
+    // do something w/ the data so the client
+    // can access it then render the app
+  //});
+});
+
+app.listen(appConfig.port as number, appConfig.host, (err: Error) => {
+  if (err) {
+    console.error(Chalk.bgRed(err));
+  } else {
+    console.info(
+      Chalk.black.bgGreen(
+        `\n\nListening at http://${appConfig.host}:${appConfig.port}\n`
+      )
+    );
+  }
+});
+// const COULOMB = 8.957_551_787e9; // N-m^2 / C^2
+// const PLANCK = 6.626_070_040e-34; // J-s
+// const JENNY = 867_5309; // C-A-L^2
+
+
+interface NumStrTuple extends Array<number | string> {
+    0: number;
+    1: string;
+    length: 2; // using the numeric literal type '2'
+}
+
+
+interface O {
+    foo?: string;
+}
+
+function _fails<K extends keyof O>(o: O, k: K) {
+    let s: string = o[k]; // Previously allowed, now an error
+                          // string | undefined is not assignable to a string
+}
