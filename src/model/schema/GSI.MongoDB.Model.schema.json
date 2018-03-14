@@ -1,20 +1,20 @@
 {
-	"$id": "GSI.MongoDB",
+	"id": "GSI.MongoDB",
 	"$schema": "http://json-schema.org/draft-06/schema#",
 	"definitions": {
 		"npc_dota_items": {
             "$id":"/definitions/npc_dota_items",
 			"$ref":
-				"https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.Enums.schema.json#/GSI.Enums#/definitions/npc_dota_items"
+				"https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.Enums.schema.json#/definitions/npc_dota_items"
         },
         "npc_dota_hero_ability": {
             "$id":"/definitions/npc_dota_hero_ability",
 			"$ref":
-				"https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.Enums.schema.json#/GSI.Enums#/definitions/npc_dota_hero_ability"
+				"https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.Enums.schema.json#/definitions/npc_dota_hero_ability"
 		},"npc_dota_hero": {
             "$id":"/definitions/npc_dota_hero",
 			"$ref":
-				"https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.Enums.schema.json#/GSI.Enums#/definitions/npc_dota_hero"
+				"https://raw.githubusercontent.com/MEPTBbIu/d2p-server/master/src/model/schema/GSI.Enums.schema.json#/definitions/npc_dota_hero"
 		},
 		"GSI_AbilityBase": {
 			"$id": "/definitions/GSI_AbilityBase",
